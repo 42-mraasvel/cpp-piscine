@@ -1,0 +1,3 @@
+EXEC=./zombie
+make
+$EXEC $@

@@ -1,0 +1,53 @@
+CPP M07 EVAL
+
+	Awesome class doesn't work with SWAP as it's given in the eval sheet (doesn't have a default constructor and assignment operator overload)
+	ex02: const T& instead of T& function (*f), which is not specified in the subject
+	Tests with classes
+
+
+	ex00: COPY CONSTRUCTOR for SWAP
+
+	ex01: const (*f)
+
+Templates
+
+	Syntax:
+
+		template <typename T>
+		T max (T x, T y) {
+			return x >= y ? x : y;
+		}
+
+		Multiple types:
+		template <typename T, typename S>
+
+	Default Type:
+		// If I don't tell it what type it is: use this
+		template <typename T = float>
+
+	Specialization:
+		partial or full specialization on templates
+
+		No Specialization:
+
+			template <typename T, typename U>
+			class Pair {};
+
+		Partial Specialization:
+
+			template <typename U>
+			class Pair <int, U> {};
+
+		Full Specialization:
+
+			template <>
+			class Pair<int, int> {}''
+
+
+	Defining member functions outside of a templated class:
+		require their own template
+
+		template <typename T>
+		int Array<t>::getLength() const {
+			return len;
+		}

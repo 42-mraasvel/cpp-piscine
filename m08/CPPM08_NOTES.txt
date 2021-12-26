@@ -1,0 +1,13 @@
+STL:
+
+	https://www.learncpp.com/cpp-tutorial/the-standard-template-library-stl/
+
+	What are all the containers?
+
+		https://www.cplusplus.com/reference/stl/
+
+	What exactly does the STL provide?
+
+		https://www.cplusplus.com/reference/stl/
+		https://www.cplusplus.com/reference/algorithm/
+		https://www.cplusplus.com/reference/iterator/

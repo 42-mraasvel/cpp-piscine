@@ -1,0 +1,48 @@
+ADHOC POLYMORPHISM
+
+		FUNCTION OVERLOADING
+
+
+	Function having the same name, accepting different parameters
+
+		- One function name
+		- Different parameters for every overload
+
+
+
+OPERATOR OVERLOADING
+
+
+	VOCABULARY
+
+		Infix:   1 + 1
+		Prefix:  + 1 1
+		Postfix: 1 1 +
+
+		Prefix is also known as Functional rotation : f(x, y) or +(1, 1)
+		Key to understanding overloading in C++
+
+		1.+(1) : class method notation
+
+	<return> operator<operator>(parameter) [const];
+
+	Rules:
+
+		1. Overload must be natural, if it seems strange, don't do it
+		2. Overload must be related to the natural semantics of this operator
+		3. Just don't do it, in a lot of cases it doesn't make sense to use operator overloading
+
+
+		It makes sense to use in for example mathematical classes, or copy constructors
+
+CANONICAL FORM
+
+	Coplien form
+
+
+	Way of building basic classes: every classes, good practice
+
+		Constructor
+		Destructor
+		Copy Constructor
+		Virtual Assignment Operator

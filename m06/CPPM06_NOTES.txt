@@ -1,0 +1,101 @@
+CASTS
+
+EXERCISES:
+
+	EX01
+
+		INT : all digits
+		CHAR: 1 length, non-digit character
+		FLOAT: contains period between digits and 'f' at the end
+		DOUBLE: contains period between digits
+
+		INT: 0 42 -42
+		FLOAT: 0.0f 4.2f : -inff +inff nanf
+		DOUBLE: 0.0 4.2 : -inf +inf nan
+		CHAR: 'c' 'a'
+
+Questions:
+
+	What is upcasting, what is downcasting, what is the difference?
+
+
+Implicit Cast
+
+	Happens automatically when an expression contains different types
+
+Explicit Cast
+
+	Explicitly typecasting a variable
+	(type) variable
+
+Type Reinterpretation, Identity Cast
+
+	Same bits are kept
+
+Type Qualifier Cast
+
+	type qualifiers: const, volatile
+	You can remove or add type qualifiers by making explicit casts
+
+
+Upcast & Downcast in C++
+
+	Example:
+
+		Child1 a;
+		Parent *b = (Parent *) &a; // Explicit upcast
+		Child2 *c = (Child2 *) b; // Explicit downcast to the wrong type, will compile
+
+
+
+
+ **** C++ CASTS ****
+
+
+
+Static Cast
+
+	static_cast<DataType>(parameter)
+
+	Compile time cast
+	Implicit conversion between types
+
+
+Dynamic Cast
+
+	The only cast that happens at runtime
+	It will only work with polymorphic instance (subtype polymorphism: at least on of the member functions should be virtual)
+
+Reinterpret Cast
+
+	Reinterpret any address, as any other address
+
+Const Cast
+
+	Possible to cast const pointers to mutable pointers (int *a = const_cast<int *>(const int *b))
+
+TypeCast Operators
+
+	Overloading typecast operators for your class:
+
+	class Foo {
+		operator int() { return [INT_VALUE]; }
+	}
+
+	Now this will be valid:
+		int n = Foo();
+
+Explicit Keyword
+
+	Does not allow implicit conversions (for example if used with constructor)
+
+	class C {
+					C (const A&);
+		explicit 	C (const B&);
+	}
+
+
+	void f(const C&) {}
+
+	f(A()); // Works, because looks for implicit constructor
+	f(B()); // Doesn't work, because constructor is explicit

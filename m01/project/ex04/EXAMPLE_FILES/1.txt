@@ -1,0 +1,14 @@
+		****BEGIN FILE****
+hello hello
+hello
+
+string without word to be replaced
+hello__partofword__hello
+extra words hello
+Case checking: Hello heLlO HELLO
+
+		****WHITESPACE****
+    hello			
+hello   
+				hello
+		****END FILE****

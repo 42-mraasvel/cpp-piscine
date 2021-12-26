@@ -1,0 +1,22 @@
+
+New / Delete:
+
+	Memory allocation, but it calls the constructors and destructors of objects, which malloc does not do
+
+References:
+
+	More like an alias for a variable
+	Because it's const, it can't be changed so therefore there is on point in it being a value itself
+
+	A pointer that is always constant
+	Always dereferenced
+	Never void
+
+File Streams:
+
+	input/output streams
+
+	stringstreams
+
+	ostringstream
+	istringstream

@@ -1,0 +1,102 @@
+NOTIONS:
+
+	Namespaces
+	STDIO streams
+	Class and instances
+	Member attributes and member functions
+	This
+	Init_list
+	Const
+	Encapsulation
+	Class vs structs
+	accessors
+	comparisons
+	non member attributes and non member functions
+	pointers to members
+
+
+Namespaces:
+
+	Grouping together a set of related symbols and functions
+	Making it possible to spread out these symbols and functions into multiple files
+
+	Scope Resolution Operator:
+		NameSpaceName::NamespaceAccess
+
+IOSTREAMS:
+
+	Extraction operator - istream: '>>'
+	Insertion operator - ostream: '<<'
+
+Classes:
+
+	Constructor: 'Name' Called during initialization
+	Deconstructor '~Name' Called when object passes out of scope or is explicitly deleted
+	Member Attribute: variable in a class, accessible from instance
+	Member Function: Function in a class, able to be used from instance of class
+
+	this: pointer to current instance of the class
+
+	Initialization list in constructor:
+
+		ClassName::ClassName(p1, p2) : v1(p1), v2(p2) {}
+		This is not an assignment, but an initialization!
+
+	Public/Private
+
+		Public - accessible from outside of the class
+		Private - accessible from inside the class only
+
+		Clarity/syntax:
+
+			Prefix private attributes & methods with '_'
+
+	Structs vs Classes:
+
+		Scope of structure is public by default
+		Scope of a class is private by default
+
+	Accessors:
+
+		Functions to access private attributes (GetSize, SetSize for example)
+		Set can be const usually
+		It's so that the user cannot access the variables directly
+		Encouraged to use / overuse
+
+	Equality:
+
+		physical equality: same address, same instance
+		structural equality: same values (for example it's a different struct, but it's attributes has the same values)
+
+	static keyword:
+
+		Used to specify non-member attributes and functions
+		Recommended to access through scope resolution operator : 'ClassName::StaticAttributeOrFunction'
+
+Const:
+
+	const variable can be initialized with initialization list, and afterwards cannot be altered.
+	'void f() const {}'' : member function won't alter the current instance of the class
+
+
+OOP principles:
+
+	Encapsulation
+	Abstraction
+	Inheritance
+	Polymorphism
+
+
+Other tutorials:
+
+	https://isocpp.org/get-started
+	https://www.cjdb.com.au/sg20-and-videos
+	http://www.cplusplus.com/
+
+STL reference: https://en.cppreference.com/w/
+
+
+Books:
+
+	https://isocpp.org/tour
+	https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list/388282#388282

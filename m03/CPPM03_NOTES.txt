@@ -1,0 +1,89 @@
+Inheritance
+
+EVAL
+
+Protected attributes in ex01
+
+
+
+Sources:
+
+	https://www.geeksforgeeks.org/inheritance-in-c/
+	https://www.learncpp.com/cpp-tutorial/introduction-to-inheritance/
+
+What?
+
+	- Capability to derive properties and characteristics from other classes (methods, attributes)
+
+Why?
+
+	When you write very similar classes, each needing the same utilities
+	You can then write a base class with these utilities, and derive these utilities from that base class using inheritance
+
+Class Permissions:
+
+	Access-spec		public	protected	private
+	Same class		yes		yes			yes
+	Derived class	yes		yes			no
+	Outside class	yes		no			no
+
+A derived class inherits all base class methods with the following exceptions:
+
+		Constructors, destructors and copy constructors of the base class.
+		Overloaded operators of the base class.
+		The friend functions of the base class.
+
+Inheritance Modes:
+
+	Best Practice: Use Public Inheritance unless you have a good reason to do otherwise
+
+	Public Inheritance
+
+		public members of the base class become public members of the derived class,
+		and protected members of the base class become protected members of the derived class.
+
+	Protected Inheritance
+
+		public and protected members of the base class become protected members of the derived class.
+
+	Private Inheritance
+
+		public and protected members of the base class become private members of the derived class.
+
+Hybrid Inheritance:
+
+	Combining more than one type of inheritance
+
+virtual inheritance:
+	
+	class A;
+
+	class B: public A;
+	class C: public A;
+	class D: public B, public C
+
+	Now D has inherited A twice
+
+	class B: virtual public A;
+	class C: virtual public A;
+
+	Problem solved 
+
+
+
+
+KEYWORD using:
+
+	change the access specifier of base members:
+
+	class Base { public: public_function; }
+	class Derived : public Base { private: using Base::public_function; }
+
+	Delete inherited functions:
+
+	class Derived: public Base { int BaseMemberName = delete; } // Base::BaseMemberName is still accessable though, not sure if by upcasting (static_cast<Base>(derived)) or through scope resolution
+
+
+Multiple Inheritance
+
+	class Name : Access-Specifier Base Class, Access-Specifier Base Class, ... {};

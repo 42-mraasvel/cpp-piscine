@@ -1,0 +1,20 @@
+Nested Classes
+
+	Classes defined inside another definition of a class
+
+Exceptions
+
+	Way to handle errors, instead of return (-1);
+
+	try {
+		if (error) {
+			throw exception
+		}
+	} catch (exception) {}
+
+
+	Exception class:
+
+		class CustomException : public exception {
+			virtual const char* what() const throw() {}
+		};

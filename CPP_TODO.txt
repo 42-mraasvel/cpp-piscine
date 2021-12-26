@@ -1,0 +1,39 @@
+CPP
+
+TODO:
+
+	M00:
+
+		- Rewrite or simply fix ex01
+		- Evaluate
+
+	M06:
+
+		- Evaluate
+
+	M07:
+
+		Tests:
+			index overflowing
+			default constructor
+			
+		- learncpp.com tutorials
+
+	M08:
+
+		Learn everything about STL?
+
+READ, SRCS:
+
+
+	https://www.learncpp.com/cpp-tutorial/introduction-to-inheritance/
+
+	https://github.com/qingqingqingli/CPP/wiki/module03
+	Diamond Inheritance
+
+	https://www.geeksforgeeks.org/multiple-inheritance-in-c/
+
+Courses:
+
+	https://www.learncpp.com/
+	https://developers.google.com/edu/c++/getting-started

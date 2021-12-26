@@ -1,0 +1,126 @@
+Sub-typing Polymorphism
+
+
+Constructors and Destructors should display an explicit message
+Test for using in character test in final exercise, as well as test for adding too many materia to character
+
+
+EVALUATION:
+
+
+	virtual destructors in ex00 : PARENT AND DERIVED!!
+
+
+
+Polymorphism: Using a single symbol to represent multiple types
+
+Sub-type polymorphism:		Also known as run-time polymorphism or 'inclusion polymorphism'
+Parametric polymorphism:	compile-time polymorphism
+Ad-hoc polymorphism:		overloading
+Coercion:					casting (implicit or explicit)
+
+Inheritance: Derived IS-A Base : Player IS-A Creature
+
+
+	//! Fine, because warrior is a character
+	Warrior * war = new Warrior;
+	Character * char = new Warrior; // Will use character members, unless virtual was used
+
+	//! Not fine, because Character is NOT a warrior
+	Warrior* war = new Character;
+
+
+Virtual Keyword:
+
+	virtual member functions: linkage is dynamic and not static (run-time vs compile-time)
+
+	virtual member function = method
+	method: member function for which resolution will be dynamic
+
+	If you have for example a Base class reference or pointer to a Derived class instance,
+	if the called function is not virtual it will select the Base class version, otherwise it will take the most derived (OVERRIDDEN!) version
+	This counts for destructors as well, that's why you want a virtual destructor in an abstract class for example
+
+Abstract Classes and Interfaces
+
+	Pure Method: Doesn't exist (no definition): virtual func() = 0;
+	An abstract class cannot be instantiated
+	Forces derived classes to define all pure functions in order to be instantiated
+	Pure Virtual Functions can have definitions, but they cannot be inline: the class will still be abstract but there will be a default version available
+
+
+
+Interface classes:
+
+	No member variables
+	All functions are pure virtual
+	Purely a definition: no actual implementation
+
+	You need a virtual destructor in case of a IClass pointer, so the correct destructor is called.
+
+
+Object Slicing:
+
+	When assigning a derived object to a base type: the derived part gets sliced off and only the base part gets copied
+
+Dynamic Cast:
+
+	Dynamic: as in during runtime checks happen
+
+	Downcasting: casting a base pointer down to a derived pointer
+	Return: nulptr if not actually possible
+	Derived *dptr = dynamic_cast<Derived *> (bptr);
+	dptr = NULL: if bptr doesn't actually point to Derived type
+
+Tips:
+
+	- Always make explicit destructors virtual when dealing with inheritance and base classes
+
+
+
+		What is subtype polymorphism?
+
+			The concept that a class instance pointer can point to a derived class, for which the function calls are then resolved dynamically at run-time
+			subtype: a datatype that is related to another datatype (base and derived)
+
+		What is an abstract class?
+
+			A class that contains a pure virtual function
+			Because it is abstract it cannot be instantiated
+			The derived class implements the abstract methods of the abstract class, otherwise the derived class is also considered to be abstract
+			It's used as a sort of blueprint for other, derived classes
+
+		What is an interface?
+
+			A description of the actions an object can do
+			An interface is a class that contains only pure virtual functions
+			No implementation whatsoever, as opposed to the abstract class
+
+		What is the difference between an abstract class and an interface?
+
+			Abstract : at least one pure virtual function
+			Interface: only pure virtual functions and a virtual destructor
+			Abstract : can have some implementation and attributes
+			Interface: no implementation whatsoever
+
+		What are virtual member functions
+
+			Function whose calls are resolved dynamically (during run-time) through the virtual table
+
+		What are pure virtual methods?
+
+			An abstract member function that is not implemented: it must be implemented by the derived class
+
+		What is a deep copy, what is a shallow copy?
+
+			Shallow copy: stores a reference to the original object
+			Deep copy: stores a copy of the original object
+
+		Why would you use a private constructor?
+
+			To for example restrict the object instantiating to always have constructor parameters if the default constructor is private
+
+		Why and when would you use a virtual destructor?
+
+			When you are deriving from that class, you should make a virtual destructor
+			So that if you use subtype polymorphism, the destructors of all derived classes get called as well, otherwise you will have a leak
